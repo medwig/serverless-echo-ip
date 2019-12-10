@@ -1,0 +1,15 @@
+service: serverless-echo-rest
+
+provider:
+  name: aws
+  runtime: python3.7
+  region: us-east-2
+
+functions:
+  echo:
+    handler: handler.echo
+    events:
+      - http:
+          path: /
+          method: get
+
